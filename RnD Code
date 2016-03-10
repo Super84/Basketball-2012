@@ -1,0 +1,763 @@
+int a1 = 1;
+int b1 = 2;
+int c1 = 3;
+int d1 = 4;
+int e1 = 5;
+int f1 = 6;
+int g1 = 7;
+int a2 = 8;
+int b2 = 9;
+int c2 = 10;
+int d2 = 11;
+int e2 = 12;
+int f2 = 13;
+int g2 = 14;
+int a3 = 15;
+int b3 = 16;
+int c3 = 17;
+int d3 = 18;
+int e3 = 19;
+int f3 = 20;
+int g3 = 21;
+int a4 = 22;
+int b4 = 23;
+int c4 = 24;
+int d4 = 25;
+int e4 = 26;
+int f4 = 27;
+int g4 = 28;
+int switch1Pin = 29;
+int switch2Pin = 30;
+int switch3Pin = 31;
+int switch4Pin = 32;
+int switch1State;
+int switch2State;
+int switch3State;
+int switch4State;
+long debounceDelay = 50;
+long last1Debounce = 0;
+long last2Debounce = 0;
+long last3Debounce = 0;
+long last4Debounce = 0;
+int num1 = 0;
+int num2 = 0;
+int num3 = 0;
+int num4 = 0;
+
+
+void clr() {
+  digitalWrite(a1, LOW);
+  digitalWrite(b1, LOW);
+  digitalWrite(c1, LOW);
+  digitalWrite(d1, LOW);
+  digitalWrite(e1, LOW);
+  digitalWrite(f1, LOW);
+  digitalWrite(g1, LOW);
+  digitalWrite(a2, LOW);
+  digitalWrite(b2, LOW);
+  digitalWrite(c2, LOW);
+  digitalWrite(d2, LOW);
+  digitalWrite(e2, LOW);
+  digitalWrite(f2, LOW);
+  digitalWrite(g2, LOW);
+  digitalWrite(a3, LOW);
+  digitalWrite(b3, LOW);
+  digitalWrite(c3, LOW);
+  digitalWrite(d3, LOW);
+  digitalWrite(e3, LOW);
+  digitalWrite(f3, LOW);
+  digitalWrite(g3, LOW);
+  digitalWrite(a4, LOW);
+  digitalWrite(b4, LOW);
+  digitalWrite(c4, LOW);
+  digitalWrite(d4, LOW);
+  digitalWrite(e4, LOW);
+  digitalWrite(f4, LOW);
+  digitalWrite(g4, LOW);
+}
+
+void one() {
+  digitalWrite(a1, LOW);
+  digitalWrite(b1, HIGH);
+  digitalWrite(c1, HIGH);
+  digitalWrite(d1, LOW);
+  digitalWrite(e1, LOW);
+  digitalWrite(f1, LOW);
+  digitalWrite(g1, LOW);
+}
+
+void two() {
+  digitalWrite(a1, HIGH);
+  digitalWrite(b1, HIGH);
+  digitalWrite(c1, LOW);
+  digitalWrite(d1, HIGH);
+  digitalWrite(e1, HIGH);
+  digitalWrite(f1, LOW);
+  digitalWrite(g1, HIGH);
+}
+
+void three() {
+  digitalWrite(a1, HIGH);
+  digitalWrite(b1, HIGH);
+  digitalWrite(c1, HIGH);
+  digitalWrite(d1, HIGH);
+  digitalWrite(e1, LOW);
+  digitalWrite(f1, LOW);
+  digitalWrite(g1, HIGH);
+}
+
+void four() {
+  digitalWrite(a1, LOW);
+  digitalWrite(b1, HIGH);
+  digitalWrite(c1, HIGH);
+  digitalWrite(d1, LOW);
+  digitalWrite(e1, LOW);
+  digitalWrite(f1, HIGH);
+  digitalWrite(g1, LOW);
+}
+
+void five() {
+  digitalWrite(a1, HIGH);
+  digitalWrite(b1, LOW);
+  digitalWrite(c1, HIGH);
+  digitalWrite(d1, HIGH);
+  digitalWrite(e1, LOW);
+  digitalWrite(f1, HIGH);
+  digitalWrite(g1, HIGH);
+}
+
+void six() {
+  digitalWrite(a1, HIGH);
+  digitalWrite(b1, LOW);
+  digitalWrite(c1, HIGH);
+  digitalWrite(d1, HIGH);
+  digitalWrite(e1, HIGH);
+  digitalWrite(f1, HIGH);
+  digitalWrite(g1, HIGH);
+}
+
+void seven() {
+  digitalWrite(a1, HIGH);
+  digitalWrite(b1, HIGH);
+  digitalWrite(c1, HIGH);
+  digitalWrite(d1, LOW);
+  digitalWrite(e1, LOW);
+  digitalWrite(f1, LOW);
+  digitalWrite(g1, LOW);
+}
+
+void eight() {
+  digitalWrite(a1, HIGH);
+  digitalWrite(b1, HIGH);
+  digitalWrite(c1, HIGH);
+  digitalWrite(d1, HIGH);
+  digitalWrite(e1, HIGH);
+  digitalWrite(f1, HIGH);
+  digitalWrite(g1, HIGH);
+}
+
+void nine() {
+  digitalWrite(a1, HIGH);
+  digitalWrite(b1, HIGH);
+  digitalWrite(c1, HIGH);
+  digitalWrite(d1, HIGH);
+  digitalWrite(e1, LOW);
+  digitalWrite(f1, HIGH);
+  digitalWrite(g1, HIGH);
+}
+
+void zero() {
+  digitalWrite(a1, HIGH);
+  digitalWrite(b1, HIGH);
+  digitalWrite(c1, HIGH);
+  digitalWrite(d1, HIGH);
+  digitalWrite(e1, HIGH);
+  digitalWrite(f1, HIGH);
+  digitalWrite(g1, LOW);
+}
+
+void ten() {
+  digitalWrite(a2, LOW);
+  digitalWrite(b2, HIGH);
+  digitalWrite(c2, HIGH);
+  digitalWrite(d2, LOW);
+  digitalWrite(e2, LOW);
+  digitalWrite(f2, LOW);
+  digitalWrite(g2, LOW);
+}
+
+void twenty() {
+  digitalWrite(a2, HIGH);
+  digitalWrite(b2, HIGH);
+  digitalWrite(c2, LOW);
+  digitalWrite(d2, HIGH);
+  digitalWrite(e2, HIGH);
+  digitalWrite(f2, LOW);
+  digitalWrite(g2, HIGH);
+}
+
+void thirty() {
+  digitalWrite(a2, HIGH);
+  digitalWrite(b2, HIGH);
+  digitalWrite(c2, HIGH);
+  digitalWrite(d2, HIGH);
+  digitalWrite(e2, LOW);
+  digitalWrite(f2, LOW);
+  digitalWrite(g2, HIGH);
+}
+
+void fourty() {
+  digitalWrite(a2, LOW);
+  digitalWrite(b2, HIGH);
+  digitalWrite(c2, HIGH);
+  digitalWrite(d2, LOW);
+  digitalWrite(e2, LOW);
+  digitalWrite(f2, HIGH);
+  digitalWrite(g2, LOW);
+}
+
+void fifty() {
+  digitalWrite(a2, HIGH);
+  digitalWrite(b2, LOW);
+  digitalWrite(c2, HIGH);
+  digitalWrite(d2, HIGH);
+  digitalWrite(e2, LOW);
+  digitalWrite(f2, HIGH);
+  digitalWrite(g2, HIGH);
+}
+
+void sixty() {
+  digitalWrite(a2, HIGH);
+  digitalWrite(b2, LOW);
+  digitalWrite(c2, HIGH);
+  digitalWrite(d2, HIGH);
+  digitalWrite(e2, HIGH);
+  digitalWrite(f2, HIGH);
+  digitalWrite(g2, HIGH);
+}
+
+void seventy() {
+  digitalWrite(a2, HIGH);
+  digitalWrite(b2, HIGH);
+  digitalWrite(c2, HIGH);
+  digitalWrite(d2, LOW);
+  digitalWrite(e2, LOW);
+  digitalWrite(f2, LOW);
+  digitalWrite(g2, LOW);
+}
+
+void eighty() {
+  digitalWrite(a2, HIGH);
+  digitalWrite(b2, HIGH);
+  digitalWrite(c2, HIGH);
+  digitalWrite(d2, HIGH);
+  digitalWrite(e2, HIGH);
+  digitalWrite(f2, HIGH);
+  digitalWrite(g2, HIGH);
+}
+
+void ninety() {
+  digitalWrite(a2, HIGH);
+  digitalWrite(b2, HIGH);
+  digitalWrite(c2, HIGH);
+  digitalWrite(d2, HIGH);
+  digitalWrite(e2, LOW);
+  digitalWrite(f2, HIGH);
+  digitalWrite(g2, HIGH);
+}
+
+void zerozero() {
+  digitalWrite(a2, HIGH);
+  digitalWrite(b2, HIGH);
+  digitalWrite(c2, HIGH);
+  digitalWrite(d2, HIGH);
+  digitalWrite(e2, HIGH);
+  digitalWrite(f2, HIGH);
+  digitalWrite(g2, LOW);
+}
+
+void onehundred() {
+  digitalWrite(a3, LOW);
+  digitalWrite(b3, HIGH);
+  digitalWrite(c3, HIGH);
+  digitalWrite(d3, LOW);
+  digitalWrite(e3, LOW);
+  digitalWrite(f3, LOW);
+  digitalWrite(g3, LOW);
+}
+
+void twohundred() {
+  digitalWrite(a3, HIGH);
+  digitalWrite(b3, HIGH);
+  digitalWrite(c3, LOW);
+  digitalWrite(d3, HIGH);
+  digitalWrite(e3, HIGH);
+  digitalWrite(f3, LOW);
+  digitalWrite(g3, HIGH);
+}
+
+void threehundred() {
+  digitalWrite(a3, HIGH);
+  digitalWrite(b3, HIGH);
+  digitalWrite(c3, HIGH);
+  digitalWrite(d3, HIGH);
+  digitalWrite(e3, LOW);
+  digitalWrite(f3, LOW);
+  digitalWrite(g3, HIGH);
+}
+
+void fourhundred() {
+  digitalWrite(a3, LOW);
+  digitalWrite(b3, HIGH);
+  digitalWrite(c3, HIGH);
+  digitalWrite(d3, LOW);
+  digitalWrite(e3, LOW);
+  digitalWrite(f3, HIGH);
+  digitalWrite(g3, LOW);
+}
+
+void fivehundred() {
+  digitalWrite(a3, HIGH);
+  digitalWrite(b3, LOW);
+  digitalWrite(c3, HIGH);
+  digitalWrite(d3, HIGH);
+  digitalWrite(e3, LOW);
+  digitalWrite(f3, HIGH);
+  digitalWrite(g3, HIGH);
+}
+
+void sixhundred() {
+  digitalWrite(a3, HIGH);
+  digitalWrite(b3, LOW);
+  digitalWrite(c3, HIGH);
+  digitalWrite(d3, HIGH);
+  digitalWrite(e3, HIGH);
+  digitalWrite(f3, HIGH);
+  digitalWrite(g3, HIGH);
+}
+
+void sevenhundred() {
+  digitalWrite(a3, HIGH);
+  digitalWrite(b3, HIGH);
+  digitalWrite(c3, HIGH);
+  digitalWrite(d3, LOW);
+  digitalWrite(e3, LOW);
+  digitalWrite(f3, LOW);
+  digitalWrite(g3, LOW);
+}
+
+void eighthundred() {
+  digitalWrite(a3, HIGH);
+  digitalWrite(b3, HIGH);
+  digitalWrite(c3, HIGH);
+  digitalWrite(d3, HIGH);
+  digitalWrite(e3, HIGH);
+  digitalWrite(f3, HIGH);
+  digitalWrite(g3, HIGH);
+}
+
+void ninehundred() {
+  digitalWrite(a3, HIGH);
+  digitalWrite(b3, HIGH);
+  digitalWrite(c3, HIGH);
+  digitalWrite(d3, HIGH);
+  digitalWrite(e3, LOW);
+  digitalWrite(f3, HIGH);
+  digitalWrite(g3, HIGH);
+}
+
+void zerozerozero() {
+  digitalWrite(a3, HIGH);
+  digitalWrite(b3, HIGH);
+  digitalWrite(c3, HIGH);
+  digitalWrite(d3, HIGH);
+  digitalWrite(e3, HIGH);
+  digitalWrite(f3, HIGH);
+  digitalWrite(g3, LOW);
+}
+
+void onethousand() {
+  digitalWrite(a4, LOW);
+  digitalWrite(b4, HIGH);
+  digitalWrite(c4, HIGH);
+  digitalWrite(d4, LOW);
+  digitalWrite(e4, LOW);
+  digitalWrite(f4, LOW);
+  digitalWrite(g4, LOW);
+}
+
+void twothousand() {
+  digitalWrite(a4, HIGH);
+  digitalWrite(b4, HIGH);
+  digitalWrite(c4, LOW);
+  digitalWrite(d4, HIGH);
+  digitalWrite(e4, HIGH);
+  digitalWrite(f4, LOW);
+  digitalWrite(g4, HIGH);
+}
+
+void threethousand() {
+  digitalWrite(a4, HIGH);
+  digitalWrite(b4, HIGH);
+  digitalWrite(c4, HIGH);
+  digitalWrite(d4, HIGH);
+  digitalWrite(e4, LOW);
+  digitalWrite(f4, LOW);
+  digitalWrite(g4, HIGH);
+}
+
+void fourthousand() {
+  digitalWrite(a4, LOW);
+  digitalWrite(b4, HIGH);
+  digitalWrite(c4, HIGH);
+  digitalWrite(d4, LOW);
+  digitalWrite(e4, LOW);
+  digitalWrite(f4, HIGH);
+  digitalWrite(g4, LOW);
+}
+
+void fivethousand() {
+  digitalWrite(a4, HIGH);
+  digitalWrite(b4, LOW);
+  digitalWrite(c4, HIGH);
+  digitalWrite(d4, HIGH);
+  digitalWrite(e4, LOW);
+  digitalWrite(f4, HIGH);
+  digitalWrite(g4, HIGH);
+}
+
+void sixthousand() {
+  digitalWrite(a4, HIGH);
+  digitalWrite(b4, LOW);
+  digitalWrite(c4, HIGH);
+  digitalWrite(d4, HIGH);
+  digitalWrite(e4, HIGH);
+  digitalWrite(f4, HIGH);
+  digitalWrite(g4, HIGH);
+}
+
+void seventhousand() {
+  digitalWrite(a4, HIGH);
+  digitalWrite(b4, HIGH);
+  digitalWrite(c4, HIGH);
+  digitalWrite(d4, LOW);
+  digitalWrite(e4, LOW);
+  digitalWrite(f4, LOW);
+  digitalWrite(g4, LOW);
+}
+
+void eightthousand() {
+  digitalWrite(a4, HIGH);
+  digitalWrite(b4, HIGH);
+  digitalWrite(c4, HIGH);
+  digitalWrite(d4, HIGH);
+  digitalWrite(e4, HIGH);
+  digitalWrite(f4, HIGH);
+  digitalWrite(g4, HIGH);
+}
+
+void ninethousand() {
+  digitalWrite(a4, HIGH);
+  digitalWrite(b4, HIGH);
+  digitalWrite(c4, HIGH);
+  digitalWrite(d4, HIGH);
+  digitalWrite(e4, LOW);
+  digitalWrite(f4, HIGH);
+  digitalWrite(g4, HIGH);
+}
+
+void zerozerozerozero() {
+  digitalWrite(a4, HIGH);
+  digitalWrite(b4, HIGH);
+  digitalWrite(c4, HIGH);
+  digitalWrite(d4, HIGH);
+  digitalWrite(e4, HIGH);
+  digitalWrite(f4, HIGH);
+  digitalWrite(g4, LOW);
+}
+
+
+
+void initTest() {
+  clr();
+  delay(500);
+  zero();
+  zerozero();
+  zerozerozero();
+  zerozerozerozero();
+  delay(1000);
+  one();
+  ten();
+  onehundred();
+  onethousand();
+  delay(1000);
+  two();
+  twenty();
+  twohundred();
+  twothousand();
+  delay(1000);
+  three();
+  thirty();
+  threehundred();
+  threethousand();
+  delay(1000);
+  four();
+  fourty();
+  fourhundred();
+  fourthousand();
+  delay(1000);
+  five();
+  fifty();
+  fivehundred();
+  fivethousand();
+  delay(1000);
+  six();
+  sixty();
+  sixhundred();
+  sixthousand();
+  delay(1000);
+  seven();
+  seventy();
+  sevenhundred();
+  seventhousand();
+  delay(1000);
+  eight();
+  eighty();
+  eighthundred();
+  eightthousand();
+  delay(1000);
+  nine();
+  ninety();
+  ninehundred();
+  ninethousand();
+  delay(1000);
+}
+
+void Switches() {
+  int reading1 = digitalRead(switch1Pin);
+  if (reading1 != switch1State){
+    last1Debounce = millis();
+  }
+  if ((millis() - last1Debounce) > debounceDelay) {
+    if (reading1 != switch1State) {
+      switch1State = reading1;
+      if (switch1State == HIGH) {
+        num1 = num1 + 1;
+        if (num1 > 9) {
+          num1 = 0;
+        }
+      }
+    }
+  }
+  int reading2 = digitalRead(switch2Pin);
+  if (reading2 != switch2State){
+    last2Debounce = millis();
+  }
+  if ((millis() - last2Debounce) > debounceDelay) {
+    if (reading2 != switch2State) {
+      switch2State = reading2;
+      if (switch2State == HIGH) {
+        num2 = num2 + 1;
+        if (num2 > 9) {
+          num2 = 0;
+        }
+      }
+    }
+  }
+  int reading3 = digitalRead(switch3Pin);
+  if (reading3 != switch3State){
+    last3Debounce = millis();
+  }
+  if ((millis() - last3Debounce) > debounceDelay) {
+    if (reading3 != switch3State) {
+      switch3State = reading3;
+      if (switch3State == HIGH) {
+        num3 = num3 + 1;
+        if (num3 > 9) {
+          num3 = 0;
+        }
+      }
+    }
+  }
+  int reading4 = digitalRead(switch4Pin);
+  if (reading4 != switch4State){
+    last4Debounce = millis();
+  }
+  if ((millis() - last4Debounce) > debounceDelay) {
+    if (reading4 != switch4State) {
+      switch4State = reading4;
+      if (switch4State == HIGH) {
+        num4 = num4 + 1;
+        if (num4 > 9) {
+          num4 = 0;
+        }
+      }
+    }
+  }
+}
+
+void UpdateBoard() {
+  if (num1 = 0) {
+    zero();
+  }
+  if (num1 = 1) {
+    one();
+  }
+  if (num1 = 2) {
+    two();
+  }
+  if (num1 = 3) {
+    three();
+  }
+  if (num1 = 4) {
+    four();
+  }
+  if (num1 = 5) {
+    five();
+  }
+  if (num1 = 6) {
+    six();
+  }
+  if (num1 = 7) {
+    seven();
+  }
+  if (num1 = 8) {
+    eight();
+  }
+  if (num1 = 9) {
+    nine();
+  }
+  if (num1 = 0) {
+    zerozero();
+  }
+  if (num2 = 1) {
+    ten();
+  }
+  if (num2 = 2) {
+    twenty();
+  }
+  if (num2 = 3) {
+    thirty();
+  }
+  if (num2 = 4) {
+    fourty();
+  }
+  if (num2 = 5) {
+    fifty();
+  }
+  if (num2 = 6) {
+    sixty();
+  }
+  if (num2 = 7) {
+    seventy();
+  }
+  if (num2 = 8) {
+    eighty();
+  }
+  if (num2 = 9) {
+    ninety();
+  }
+  if (num3 = 0) {
+    zerozerozero();
+  }
+  if (num3 = 1) {
+    onehundred();
+  }
+  if (num3 = 2) {
+    twohundred();
+  }
+  if (num3 = 3) {
+    threehundred();
+  }
+  if (num3 = 4) {
+    fourhundred();
+  }
+  if (num3 = 5) {
+    fivehundred();
+  }
+  if (num3 = 6) {
+    sixhundred();
+  }
+  if (num3 = 7) {
+    sevenhundred();
+  }
+  if (num3 = 8) {
+    eighthundred();
+  }
+  if (num3 = 9) {
+    ninehundred();
+  }
+  if (num4 = 0) {
+    zerozerozerozero();
+  }
+  if (num4 = 1) {
+    onethousand();
+  }
+  if (num4 = 2) {
+    twothousand();
+  }
+  if (num4 = 3) {
+    threethousand();
+  }
+  if (num4 = 4) {
+    fourthousand();
+  }
+  if (num4 = 5) {
+    fivethousand();
+  }
+  if (num4 = 6) {
+    sixthousand();
+  }
+  if (num4 = 7) {
+    seventhousand();
+  }
+  if (num4 = 8) {
+    eightthousand();
+  }
+  if (num4 = 9) {
+    ninethousand();
+  }
+}
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(a1, OUTPUT);
+pinMode(b1, OUTPUT);
+pinMode(c1, OUTPUT);
+pinMode(d1, OUTPUT);
+pinMode(e1, OUTPUT);
+pinMode(f1, OUTPUT);
+pinMode(g1, OUTPUT);
+pinMode(a2, OUTPUT);
+pinMode(b2, OUTPUT);
+pinMode(c2, OUTPUT);
+pinMode(d2, OUTPUT);
+pinMode(e2, OUTPUT);
+pinMode(f2, OUTPUT);
+pinMode(g2, OUTPUT);
+pinMode(a3, OUTPUT);
+pinMode(b3, OUTPUT);
+pinMode(c3, OUTPUT);
+pinMode(d3, OUTPUT);
+pinMode(e3, OUTPUT);
+pinMode(f3, OUTPUT);
+pinMode(g3, OUTPUT);
+pinMode(a4, OUTPUT);
+pinMode(b4, OUTPUT);
+pinMode(c4, OUTPUT);
+pinMode(d4, OUTPUT);
+pinMode(e4, OUTPUT);
+pinMode(f4, OUTPUT);
+pinMode(g4, OUTPUT);
+pinMode(switch1Pin, INPUT);
+pinMode(switch2Pin, INPUT);
+pinMode(switch3Pin, INPUT);
+pinMode(switch4Pin, INPUT);
+initTest();
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+Switches();
+UpdateBoard();
+}
